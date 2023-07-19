@@ -29,16 +29,25 @@ class HomePage extends StatelessWidget {
             ],
           ),
           GridView.builder(
+              shrinkWrap: true,
               itemCount: listRoom.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4, // Số cột trong GridView
               ),
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  color: Colors.red,
                   margin: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.red),
                   child: Center(
-                    child: Text(listRoom[index].id ?? ''),
+                    child: Text(
+                      listRoom[index].id ?? '',
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700),
+                    ),
                   ),
                 );
               })
