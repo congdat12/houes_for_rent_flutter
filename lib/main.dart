@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_for_rent/pages/detail_page.dart';
 import 'package:house_for_rent/pages/home_page.dart';
 
 import 'authentication/login_page.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const DetailPage(),
     );
   }
 }
