@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:house_for_rent/models/room_model.dart';
 
+import 'detail_page.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -37,7 +39,14 @@ class HomePage extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return InkWell(
                   onTap: () {
-                    print(listRoom[index].id ?? '');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(
+                          roomModel: listRoom,
+                        ),
+                      ),
+                    );
                   },
                   child: Container(
                     margin: const EdgeInsets.all(20),
